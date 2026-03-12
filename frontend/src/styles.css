@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(226, 136, 83, 0.2), transparent 30%),
+    radial-gradient(circle at top right, rgba(18, 115, 110, 0.18), transparent 26%),
+    linear-gradient(180deg, #f5ede1 0%, #f6f8f3 100%);
+  color: #1f2a2d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  background: #1f5f59;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+button:hover {
+  background: #164844;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(31, 42, 45, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.app-shell {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: #9b5b2e;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  margin: 0;
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+}
+
+.hero-copy {
+  max-width: 55rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.status-card,
+.panel {
+  border: 1px solid rgba(31, 42, 45, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 30px 80px rgba(86, 95, 85, 0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 1.6rem;
+  padding: 1.3rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.panel:nth-child(1),
+.panel:nth-child(2),
+.panel:nth-child(4),
+.panel:nth-child(5),
+.panel:nth-child(6),
+.panel:nth-child(7),
+.panel:nth-child(8) {
+  grid-column: span 4;
+}
+
+.builder-panel {
+  grid-column: span 8;
+}
+
+.panel-header,
+.inline-form,
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.catalog-list,
+.list-panel,
+.event-list,
+.version-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.catalog-list li,
+.list-panel li,
+.child-card,
+.event-list li,
+.version-list li {
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(245, 237, 225, 0.8);
+}
+
+.list-panel button,
+.version-list button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-grid.compact {
+  grid-template-columns: 1fr;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-block {
+  margin-top: 1rem;
+}
+
+.child-editor p {
+  margin: 0 0 0.75rem;
+}
+
+.child-card {
+  display: grid;
+  gap: 0.75rem;
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 1080px) {
+  .hero,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .builder-panel,
+  .panel:nth-child(1),
+  .panel:nth-child(2),
+  .panel:nth-child(4),
+  .panel:nth-child(5),
+  .panel:nth-child(6),
+  .panel:nth-child(7),
+  .panel:nth-child(8) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

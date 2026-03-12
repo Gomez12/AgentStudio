@@ -1,0 +1,24 @@
+[project]
+name = "agentstudio"
+version = "0.1.0"
+description = "Self-hostable Agent Studio for defining, versioning, and running deepagents"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "croniter>=6.0.0",
+    "deepagents>=0.4.10",
+    "fastapi>=0.116.1",
+    "langchain-openai>=0.3.33",
+    "pydantic>=2.11.7",
+    "pyyaml>=6.0.2",
+    "uvicorn>=0.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.4.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
